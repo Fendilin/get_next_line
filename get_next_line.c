@@ -6,7 +6,7 @@
 /*   By: vterzian <vterzian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/25 19:06:40 by vterzian          #+#    #+#             */
-/*   Updated: 2014/11/26 22:50:36 by vterzian         ###   ########.fr       */
+/*   Updated: 2014/11/29 18:48:46 by vterzian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static int	ft_read_line(int const fd, char *buffer, char **saved)
 		*saved = ft_strjoin(tmp, buffer);
 		ft_strdel(&tmp);
 	}
+	ft_strdel(&buffer);
 	if (i == -1)
 		return (-1);
 	if (i == 0 && !c)
@@ -37,12 +38,12 @@ static int	ft_read_line(int const fd, char *buffer, char **saved)
 int			get_next_line(int const fd, char **line)
 {
 	static	char	*saved = NULL;
-	char			buffer[BUFF_SIZE + 1];
+	char			*buffer;
 	char			*tmp;
-	char			*c;
 	int				read;
 
-	if (fd < 0 || line == NULL)
+	buffer = ft_strnew(BUFF_SIZE);
+	if (fd < 0 || line == NULL || buffer == NULL)
 		return (-1);
 	if (saved == NULL)
 		saved = ft_strnew(1);
@@ -55,10 +56,9 @@ int			get_next_line(int const fd, char **line)
 		saved = NULL;
 		return (0);
 	}
-	c = ft_strchr(saved, '\n');
-	*line = ft_strsub(saved, 0, c - saved);
+	*line = ft_strsub(saved, 0, (ft_strchr(saved, '\n')) - saved);
 	tmp = saved;
-	saved = ft_strdup(c + 1);
+	saved = ft_strdup(ft_strchr(saved, '\n') + 1);
 	ft_strdel(&tmp);
 	return (1);
 }

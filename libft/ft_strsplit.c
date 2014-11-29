@@ -6,23 +6,22 @@
 /*   By: vterzian <vterzian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/12 15:17:31 by vterzian          #+#    #+#             */
-/*   Updated: 2014/11/24 13:27:04 by vterzian         ###   ########.fr       */
+/*   Updated: 2014/11/25 21:06:12 by vterzian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-int		ft_count_word(char const *s, char c)
+static int		ft_count_word(char const *s, char c)
 {
 	int i;
 	int	nbr;
 
 	i = 0;
 	nbr = 0;
-	if(s == NULL)
+	if (s == NULL)
 		return (0);
-	if(!c)
+	if (!c)
 		return (0);
 	while (s[i] != '\0')
 	{
@@ -36,13 +35,13 @@ int		ft_count_word(char const *s, char c)
 	return (nbr);
 }
 
-int		*ft_count_letter(char const *s, char c)
+static int		*ft_count_letter(char const *s, char c)
 {
 	int *tab;
 	int i;
 	int j;
 	int k;
-	
+
 	i = 0;
 	j = 0;
 	k = 0;
@@ -65,7 +64,7 @@ int		*ft_count_letter(char const *s, char c)
 	return (tab);
 }
 
-char	**ft_alloc_2dtab(int dim1, int *dim2)
+static char		**ft_alloc_2dtab(int dim1, int *dim2)
 {
 	char	**tab;
 	int		i;
@@ -76,38 +75,36 @@ char	**ft_alloc_2dtab(int dim1, int *dim2)
 		return (NULL);
 	while (i < dim1)
 	{
-		tab[i] = malloc(sizeof(char) * dim2[i]);
+		tab[i] = ft_strnew(sizeof(char) * dim2[i]);
 		i++;
 	}
 	return (tab);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	ft_putstr(s);
-	ft_putchar('\n');
 	char	**tab;
-	int 	i;
+	int		i;
 	int		j;
 	int		k;
 
 	i = 0;
 	j = 0;
+	if (s == NULL)
+		return (NULL);
 	tab = ft_alloc_2dtab(ft_count_word(s, c), ft_count_letter(s, c));
 	if (tab == NULL)
 		return (NULL);
-	ft_putstr("d\n");
 	while (s[i] != '\0')
 	{
+		k = 0;
 		while (s[i] == c && s[i] != '\0')
 			i++;
 		while (s[i] != c && s[i] != '\0')
 		{
-			tab[j][k] = s[i];
+			tab[j][k++] = s[i];
 			i++;
-			k++;
 		}
-		k = 0;
 		j++;
 	}
 	return (tab);

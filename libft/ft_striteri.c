@@ -6,7 +6,7 @@
 /*   By: vterzian <vterzian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 17:06:18 by vterzian          #+#    #+#             */
-/*   Updated: 2014/11/19 18:59:54 by vterzian         ###   ########.fr       */
+/*   Updated: 2014/11/24 15:57:31 by vterzian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	int i;
 	int len;
-	
+
 	if (s == NULL || f == NULL)
 		return ;
 	i = 0;

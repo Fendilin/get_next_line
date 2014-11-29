@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itao.c                                          :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vterzian <vterzian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/12 17:34:24 by vterzian          #+#    #+#             */
-/*   Updated: 2014/11/19 16:59:54 by vterzian         ###   ########.fr       */
+/*   Updated: 2014/11/26 19:06:30 by vterzian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,17 @@
 static int		ft_intlen(unsigned int n)
 {
 	int i;
+	int nbr;
 
+	nbr = n;
 	i = 0;
-	if (n == 0)
+	if (nbr < 0)
+		nbr *= -1;
+	if (nbr == 0)
 		return (1);
-	while (n >= 1)
+	while (nbr >= 1)
 	{
-		n /= 10;
+		nbr /= 10;
 		i++;
 	}
 	return (i);
@@ -29,32 +33,29 @@ static int		ft_intlen(unsigned int n)
 
 char			*ft_itoa(int n)
 {
-	int		nbr;
 	char	*strnew;
 	int		size;
 
-	nbr = n;
+	if (n == 0)
+		return (ft_strdup("0"));
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	size = ft_intlen(n);
 	if (n < 0)
-	{
-		nbr *= -1;
-		size = ft_intlen(nbr) + 1;
-	}
-	else
-		size = ft_intlen(nbr);
+		size += 1;
 	strnew = ft_strnew(size);
 	if (strnew == NULL)
 		return (NULL);
 	if (n < 0)
-		strnew[0] = '-';
-	while (nbr > 0)
 	{
-		strnew[size - 1] = (nbr % 10) + '0';
-		nbr /= 10;
+		strnew[0] = '-';
+		n *= -1;
+	}
+	while (n > 0)
+	{
+		strnew[size - 1] = (n % 10) + '0';
+		n /= 10;
 		size--;
 	}
-	if (n == 0)
-		strnew[0] = '0';
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
 	return (strnew);
 }

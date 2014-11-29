@@ -6,7 +6,7 @@
 /*   By: vterzian <vterzian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 16:10:16 by vterzian          #+#    #+#             */
-/*   Updated: 2014/11/19 18:59:27 by vterzian         ###   ########.fr       */
+/*   Updated: 2014/11/24 15:56:44 by vterzian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_striter(char *s, void (*f)(char *))
 {
 	int i;
 	int len;
-	
+
 	if (s == NULL || f == NULL)
 		return ;
 	i = 0;

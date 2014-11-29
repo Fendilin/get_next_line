@@ -6,7 +6,7 @@
 /*   By: vterzian <vterzian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/10 12:10:19 by vterzian          #+#    #+#             */
-/*   Updated: 2014/11/21 17:02:34 by vterzian         ###   ########.fr       */
+/*   Updated: 2014/11/29 16:06:50 by vterzian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 char	*ft_strnew(size_t size)
 {
 	char	*str;
-	
-	size += 1;
-	str = ft_memalloc(size);
+
+	str = (char *)ft_memalloc(size + 1);
 	if (str == NULL)
 		return (NULL);
 	return (str);

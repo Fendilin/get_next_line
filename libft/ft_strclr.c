@@ -6,7 +6,7 @@
 /*   By: vterzian <vterzian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 13:18:38 by vterzian          #+#    #+#             */
-/*   Updated: 2014/11/19 18:56:22 by vterzian         ###   ########.fr       */
+/*   Updated: 2014/11/24 15:56:19 by vterzian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_strclr(char *s)
 {
 	int i;
-	
+
 	if (s == NULL)
 		return ;
 	i = 0;

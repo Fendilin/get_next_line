@@ -6,7 +6,7 @@
 #    By: vterzian <vterzian@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/19 14:33:32 by vterzian          #+#    #+#              #
-#    Updated: 2014/11/26 22:50:44 by vterzian         ###   ########.fr        #
+#    Updated: 2014/11/27 16:19:29 by vterzian         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,8 +45,8 @@ $(NAME): $(OBJ)
 	@$(AR) $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
-$(OBJ): $(SRC)
-	@$(CC) $(FLAG) -c $(SRC) -I ./includes
+$(OBJ): $(SRC) 
+	@$(CC) $(FLAG) -c $(SRC) -I ./includes/
 
 clean:
 	@rm -rf $(OBJ)

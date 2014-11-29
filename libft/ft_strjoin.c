@@ -6,7 +6,7 @@
 /*   By: vterzian <vterzian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/12 13:26:44 by vterzian          #+#    #+#             */
-/*   Updated: 2014/11/19 20:14:07 by vterzian         ###   ########.fr       */
+/*   Updated: 2014/11/24 15:58:08 by vterzian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*strnew;
+	char		*strnew;
 	size_t		size;
 
 	if (s1 == NULL && s2 == NULL)

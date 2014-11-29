@@ -6,14 +6,14 @@
 /*   By: vterzian <vterzian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/25 13:59:37 by vterzian          #+#    #+#             */
-/*   Updated: 2014/11/26 22:50:42 by vterzian         ###   ########.fr       */
+/*   Updated: 2014/11/29 18:55:24 by vterzian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define BUFF_SIZE 10
+# define BUFF_SIZE 312
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
