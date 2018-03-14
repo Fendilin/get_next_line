@@ -5,7 +5,9 @@
 1. [Usage](#usage)
   
 ## Introduction
-Second project at 42, I had to write a function that will allow you to read a line ending with a newline character from a file descriptor.
+Second project at 42, I had to write a function that will allow you to read a line ending with a newline character from a file descriptor. 
+
+This project uses libft.
 
 ## Usage 
 Clone the repository, go to the new repository and execute the Makefile
